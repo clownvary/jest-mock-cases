@@ -1,0 +1,23 @@
+{
+  "name": "jest-mock-api",
+  "version": "1.0.0",
+  "description": "",
+  "private": false,
+  "scripts": {
+    "test": "jest --watch"
+  },
+  "author": "clownvary",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/jest": "^24.0.15",
+    "babel": "^6.23.0",
+    "babel-cli": "^6.26.0",
+    "jest": "^24.8.0",
+    "jest-watch-typeahead": "^0.3.1"
+  },
+  "dependencies": {
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "babel-jest": "^24.8.0"
+  }
+}
