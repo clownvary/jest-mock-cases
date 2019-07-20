@@ -4,7 +4,9 @@
   "description": "",
   "private": false,
   "scripts": {
-    "test": "jest --watch"
+    "test": "jest",
+    "test:watch": "jest --watch"
+
   },
   "author": "clownvary",
   "license": "ISC",
