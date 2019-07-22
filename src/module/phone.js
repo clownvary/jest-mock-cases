@@ -22,7 +22,11 @@ export default class Phone {
     }).catch((e) => {
       return 'restart fail: ' + e;
     });
-
   }
+  playNewSomethingCool(){
+    const coolSoundFileName = 'song.mp4';
+    return  new SoundPlayer().playSoundFile(coolSoundFileName);
+  }
+
 
 }

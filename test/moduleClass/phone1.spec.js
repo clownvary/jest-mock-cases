@@ -1,6 +1,8 @@
 import Phone from 'phone';
 import SoundPlayer from 'soundPlayer';
 // 适合同一文件中mock多次不同的值
+// 注意当前这种方式只适合内部延迟执行class内的方法的调用
+// 不适合return new SoundPlayer().playSoundFile();这种直接调用
 
 jest.mock('soundPlayer');
 

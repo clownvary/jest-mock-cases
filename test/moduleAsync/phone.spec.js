@@ -2,12 +2,6 @@ import Phone from 'phone';
 import * as util from 'phoneUtil';
 // 适合异步方法的多次mock
 
-jest.mock('phoneUtil');
-
-beforeEach(()=>{
-// jest.clearAllMocks();
-})
-
 describe('Module with async method: need to replace implementation', () => {
     it('should return original value by object', () => {
         const phone = new Phone();

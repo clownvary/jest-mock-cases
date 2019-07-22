@@ -15,11 +15,11 @@ jest.mock('soundPlayer',()=>{
     });
     // not work
     jest.mock('soundPlayer', () => {
-       return jest.fn().mockImplementation(() => {
+       return ()=>{() => {
            return {
                playSoundFile: jest.fn().mockReturnValue('mock value')
            }
-       })
+       }}
     );
     */
     return jest.fn().mockImplementation(()=>{
