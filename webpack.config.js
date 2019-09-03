@@ -8,11 +8,10 @@ const webpack = require('webpack');
 
 module.exports = {
   entry: {
-    app: './src/index.js'
+    app: './src/index.jsx'
   },
   mode: 'development',
   output: {
-
     filename: '[name].[hash].js',
     path: path.resolve(__dirname, 'dist')
   },
@@ -33,37 +32,24 @@ module.exports = {
       ]
     },
     {
-      test: /\.(png|jpg|gif|svg)$/,
-      use:[
-        {
-          loader: 'file-loader',
-          options: {
-            limit: 2000,
-            name: 'images/[name].[ext]'
-          }
-        }
-      ]
-    },
-    {
-      test: /\.(woff|woff2|eot|ttf|otf)$/,
+      test: /\.(jsx|js)$/,
       use: [
         {
-          loader: 'file-loader',
-          options: {
-            limit: 8000,
-            mimetype: 'image/svg+xml',
-            name: 'fonts/[name].[hash].[ext]'
-          }
+          loader: 'babel-loader'
         }
       ]
     }
 
     ]
   },
+  resolve: {
+    extensions: ['.js', '.jsx', '.less'],
+    module: ['src', 'node_modules']
+  },
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      title: 'output management',
+      title: 'jest share',
       template: './src/index.html',
       inject: true
     }),
