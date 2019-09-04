@@ -19,7 +19,10 @@ module.exports = {
   devServer: {
     contentBase: './dist',
     hot: true,
-    open: false
+    open: false,
+    proxy: {
+      '/api': 'http://localhost:9991'
+    }
   },
   module: {
     rules: [{
@@ -44,7 +47,7 @@ module.exports = {
   },
   resolve: {
     extensions: ['.js', '.jsx', '.less'],
-    module: ['src', 'node_modules']
+    modules: ['src', 'node_modules']
   },
   plugins: [
     new CleanWebpackPlugin(),

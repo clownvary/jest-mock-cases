@@ -9,8 +9,10 @@
     ],
     "globals": {
         "Atomics": "readonly",
-        "SharedArrayBuffer": "readonly"
+        "SharedArrayBuffer": "readonly",
+        "window": true
     },
+    "parser": "babel-eslint",
     "parserOptions": {
         "ecmaFeatures": {
             "jsx": true
@@ -22,7 +24,8 @@
         "react"
     ],
     "rules": {
-      "comma-dangle" : "off"
+      "comma-dangle" : "off",
+      "import/no-named-as-default": "off"
     },
     "settings": {
       "import/resolver": {

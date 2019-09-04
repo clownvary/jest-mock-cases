@@ -7,18 +7,22 @@
     "test": "jest",
     "test:watch": "jest --watch",
     "build": "webpack",
-    "start": "webpack-dev-server"
+    "start": "webpack-dev-server",
+    "server": "node src/server/index.js"
+
   },
   "author": "clownvary",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.5.5",
+    "@babel/plugin-proposal-class-properties": "^7.5.5",
     "@babel/preset-env": "^7.5.5",
     "@babel/preset-react": "^7.0.0",
     "@types/jest": "^24.0.15",
     "babel": "^6.23.0",
-    "babel-jest": "^24.8.0",
     "babel-cli": "^6.26.0",
+    "babel-eslint": "^10.0.3",
+    "babel-jest": "^24.8.0",
     "babel-loader": "^8.0.6",
     "clean-webpack-plugin": "^3.0.0",
     "css-loader": "^3.0.0",
@@ -43,7 +47,8 @@
     "webpack-manifest-plugin": "^2.0.4"
   },
   "dependencies": {
-  
+    "axios": "^0.19.0",
+    "express": "^4.17.1",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-redux": "^7.1.1",
