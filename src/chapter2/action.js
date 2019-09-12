@@ -1,16 +1,16 @@
 import axios from 'axios';
-import {
-  GET_WEATHER_REQUEST,
-  GET_WEATHER_FAIL,
-  GET_WEATHER_SUCCESS
-} from './const';
+import { WEATHER_FAIL, WEATHER_SUCCESS } from './const';
 
-export const fetchWeatherAsyncAction = () => (dispatch) => {
-  axios.get('/api/weather/city')
+export const fetchWeatherAsyncAction = () => (dispatch) => (
+  axios.get('http://localhost:9991/api/weather/city')
     .then((res) => {
       const { data } = res;
-      dispatch({ type: GET_WEATHER_SUCCESS, payload: data });
-    });
-};
+      return dispatch({ type: WEATHER_SUCCESS, payload: data });
+    })
+    .catch((error) => {
+      dispatch({ type: WEATHER_FAIL, payload: error.message });
+      return Promise.reject(error);
+    })
+);
 
 export default fetchWeatherAsyncAction;

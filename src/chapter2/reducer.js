@@ -1,28 +1,18 @@
-import {
-  GET_WEATHER_REQUEST,
-  GET_WEATHER_FAIL,
-  GET_WEATHER_SUCCESS
-} from './const';
+import { WEATHER_FAIL, WEATHER_SUCCESS } from './const';
 
 const initialState = {
   weatherData: null,
-  errorInfo: null,
-  loading: false
+  errorInfo: null
 };
 
 function weather(state = initialState, action) {
   switch (action.type) {
-    case GET_WEATHER_REQUEST:
-      return {
-        ...state,
-        loading: true
-      };
-    case GET_WEATHER_SUCCESS:
+    case WEATHER_SUCCESS:
       return {
         ...state,
         weatherData: action.payload
       };
-    case GET_WEATHER_FAIL:
+    case WEATHER_FAIL:
       return {
         ...state,
         errorInfo: action.payload

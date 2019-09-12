@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Weather component: component should render correctly 1`] = `
+<div
+  className="weather"
+>
+  <div
+    className="weather__panel"
+  />
+  <div
+    className="weather__button"
+  >
+    <button
+      onClick={[Function]}
+      type="button"
+    >
+      西安天气
+    </button>
+  </div>
+</div>
+`;

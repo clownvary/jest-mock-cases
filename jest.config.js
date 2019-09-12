@@ -21,7 +21,7 @@ module.exports = {
   collectCoverage: true,
 
   // An array of glob patterns indicating a set of files for which coverage information should be collected
-  // collectCoverageFrom: null,
+  // collectCoverageFrom: ['src/chapter1/*.(js|jsx)'],
 
   // The directory where Jest should output its coverage files
   coverageDirectory: "coverage",
@@ -30,6 +30,10 @@ module.exports = {
   coveragePathIgnorePatterns: [
     "/node_modules/"
   ],
+  moduleNameMapper: {
+    "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/test/__mocks__/file.js",
+    "\\.(css|less|scss)$": "<rootDir>/test/__mocks__/style.js"
+  },
   modulePathIgnorePatterns:[
     'node_modules'
   ],
@@ -51,7 +55,7 @@ module.exports = {
   // errorOnDeprecated: false,
 
   // Force coverage collection from ignored files using an array of glob patterns
-  // forceCoverageMatch: [],
+  // forceCoverageMatch: ['src/chapter1/*.js'],
 
   // A path to a module which exports an async function that is triggered once before all test suites
   // globalSetup: null,
@@ -124,7 +128,7 @@ module.exports = {
   // runner: "jest-runner",
 
   // The paths to modules that run some code to configure or set up the testing environment before each test
-  // setupFiles: [],
+  setupFiles: ['<rootDir>/jest.setup.js'],
 
   // A list of paths to modules that run some code to configure or set up the testing framework before each test
   // setupFilesAfterEnv: [],
@@ -168,8 +172,6 @@ module.exports = {
   // timers: "real",
 
   // A map from regular expressions to paths to transformers
-  // transform: null,
-
   // An array of regexp pattern strings that are matched against all source file paths, matched files will skip transformation
   // transformIgnorePatterns: [
   //   "/node_modules/"
@@ -179,7 +181,7 @@ module.exports = {
   // unmockedModulePathPatterns: undefined,
 
   // Indicates whether each individual test should be reported during the run
-  verbose: null,
+  verbose: true,
 
   // An array of regexp patterns that are matched against all source file paths before re-running tests in watch mode
   // watchPathIgnorePatterns: [],
